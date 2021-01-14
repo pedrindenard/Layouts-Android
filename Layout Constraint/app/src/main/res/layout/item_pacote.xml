@@ -4,9 +4,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     
     <ImageView
+        tools:src="@sample/pacotes.json/pacotes/imagem"
         android:id="@+id/item_pacote_imagem"
         android:layout_width="0dp"
         android:layout_height="100dp"
@@ -19,10 +21,10 @@
         android:scaleType="centerCrop"/>
 
     <TextView
+        tools:text="@sample/pacotes.json/pacotes/local"
         android:id="@+id/item_pacote_local"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="São Paulo"
         app:layout_constraintStart_toStartOf="@+id/item_pacote_imagem"
         app:layout_constraintEnd_toEndOf="@+id/item_pacote_imagem"
         app:layout_constraintTop_toTopOf="@+id/item_pacote_imagem"
@@ -46,10 +48,10 @@
         app:layout_constraintTop_toBottomOf="@id/item_pacote_imagem"/>
 
     <TextView
+        tools:text="@sample/pacotes.json/pacotes/dias"
         android:id="@+id/item_pacote_dias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2 dias"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/item_pacote_divisor"
@@ -59,14 +61,13 @@
         android:textStyle="bold"/>
 
     <TextView
+        tools:text="@sample/pacotes.json/pacotes/dias"
         android:id="@+id/item_pacote_preço"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="R$ 243,99"
         app:layout_constraintTop_toBottomOf="@id/item_pacote_dias"
         app:layout_constraintStart_toStartOf="@id/item_pacote_dias"
         android:textSize="20sp"
-        android:textColor="@android:color/holo_green_dark"
-        />
+        android:textColor="@android:color/holo_green_dark"/>
 
 </android.support.constraint.ConstraintLayout>
