@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,9 +30,6 @@ public class ResumoPacoteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resumo_pacote);
 
-        Intent intent = new Intent(this, PagamentoActivity.class);
-        startActivity(intent);
-
         setTitle(TITULO_APPBAR);
 
         Pacote pacoteSaoPaulo = new Pacote("São Paulo", "sao_paulo_sp", 2, new BigDecimal("243.99"));
@@ -41,6 +39,15 @@ public class ResumoPacoteActivity extends AppCompatActivity {
         mostraDias(pacoteSaoPaulo);
         mostraPreco(pacoteSaoPaulo);
         mostraData(pacoteSaoPaulo);
+
+        Button realizaPagamento = findViewById(R.id.resumo_pacote_button_realizar_pagamento);
+        realizaPagamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ResumoPacoteActivity.this, PagamentoActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void mostraData(Pacote pacote) {
